@@ -20,7 +20,7 @@ public class MultiplicationController {
 
     @GetMapping("/random")
     public Multiplication getRandomMultiplication() {
-        return multiplicationService.createRandomMultiplicaton();
+        return multiplicationService.createRandomMultiplication();
     }
 
 }

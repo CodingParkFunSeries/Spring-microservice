@@ -27,7 +27,7 @@ public class MultiplicationServiceTest {
 
         given(randomGeneratorService.getRandomFactor()).willReturn(50, 30);
 
-        Multiplication multiplication = multiplicationService.createRandomMultiplicaton();
+        Multiplication multiplication = multiplicationService.createRandomMultiplication();
 
         Assert.assertEquals(multiplication.getFactorA(), 50);
         Assert.assertEquals(multiplication.getFactorB(), 30);

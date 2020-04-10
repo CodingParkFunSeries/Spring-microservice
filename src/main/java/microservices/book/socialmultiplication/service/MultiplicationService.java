@@ -2,7 +2,8 @@ package microservices.book.socialmultiplication.service;
 
 import microservices.book.socialmultiplication.domain.Multiplication;
 import microservices.book.socialmultiplication.domain.MultiplicationResultAttempt;
-import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 public interface MultiplicationService {
 
@@ -12,8 +13,10 @@ public interface MultiplicationService {
      *
      * @return Multiplication object with random factors.
      */
-    Multiplication createRandomMultiplicaton();
+    Multiplication createRandomMultiplication();
 
     boolean checkAttempt(final MultiplicationResultAttempt attempt);
+
+    List<MultiplicationResultAttempt> getStatsForUser(String userAlias);
 
 }

@@ -63,12 +63,15 @@ public class MultiplicationResultAttemptControllerTest {
         Multiplication multiplication = new Multiplication(50, 70);
         MultiplicationResultAttempt attempt = new
                 MultiplicationResultAttempt(
-                user, multiplication, 3500);
+                user, multiplication, 3500, correct);
         // when
         MockHttpServletResponse response = mockMvc.perform(
                 post("/results").contentType(MediaType.
                         APPLICATION_JSON)
-                        .content(jsonResult.write(attempt).
+                        .content(jsonResult.write(new MultiplicationResultAttempt(attempt. getUser(),
+                                attempt.getMultiplication(),
+                                attempt.getResultAttempt(),
+                                correct)).
                                 getJson()))
                 .andReturn().getResponse();
         // then
